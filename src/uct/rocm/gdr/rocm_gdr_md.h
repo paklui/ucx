@@ -7,6 +7,7 @@
 #define UCT_ROCM_GDR_MD_H
 
 #include <uct/base/uct_md.h>
+#include "gdrapi.h"
 
 
 extern uct_component_t uct_rocm_gdr_component;
@@ -25,6 +26,9 @@ typedef struct uct_rocm_gdr_mem {
 
 typedef struct uct_rocm_gdr_key {
     int dummy;
+    uint64_t    vaddr;
+    //void        *bar_ptr;
+    gdr_mh_t    mh;
 } uct_rocm_gdr_key_t;
 
 
